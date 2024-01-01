@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+body {
+  background-color: white;
+}
+
+hr {
+  writing-mode: vertical-lr;
+  border: 1px solid #ccc;
+  height: 70%;
+    margin-top: 12vh;
+}
+.all-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  direction: rtl;
+}
+
+form {
+  width: 60vh;
+  border-radius: 30px;
+  height: 70vh;
+  margin-top: 7vh;
+  border: 1px solid #ffffff;
+  background-color: white;
+  text-align: center;
+  margin: 20vh;
+}
+
+h2 {
+  margin: 10px;
+  text-align: right;
+  color: black;
+  font-weight: 400;
+  font-size: 50px;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+h3{
+    text-align: right;
+    color: #738196;
+    font-weight: 100;
+    font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+input[type="text"] {
+    font-size: 20px;
+  width: 400px;
+  height: 20px;
+  border: 1px solid #a6b6a9;
+  border-radius: px;
+  padding: 20px;
+  direction: rtl;
+}
+
+input[type="password"] {
+    font-size: 20px;
+  width: 400px;
+  height: 20px;
+  border: 1px solid #a6b6a9;
+  border-radius: 5px;
+  padding: 20px;
+  direction: rtl;
+}
+input[type="email"] {
+    font-size: 20px;
+  width: 400px;
+  height: 20px;
+  border: 1px solid #a6b6a9;
+  border-radius:5px;
+  padding: 20px;
+  direction: rtl;
+}
+button {
+  margin-left: 34vh;
+  width:200px;
+  padding: 17px;
+  margin-top: 5vh;
+  background-color: #4e3797;
+  border: 1px solid #4e3797;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  transition: 0.4s;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+button:hover {
+  background-color: white;
+  color: #4e3797;
+  transition: 0.4s;
+}
+.buttonQ {
+    margin-right: 3vh;
+    width:400px;
+    padding: 17px;
+    background-color: #ffffff;
+    border: 1px solid #4e3797;
+    border-radius: 5px;
+    color: #4e3797;
+    font-size: 20px;
+    transition: 0.4s;
+    font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+.buttonQ:hover {
+    background-color: #4e3797;
+    color: #ffffff;
+    transition: 0.4s;
+  }
+
+
+h4 {
+  text-align: right;
+  margin: 10px;
+  font-family: "Almarai", sans-serif;
+  font: weight 400px;
+  color: #738196;
+  font-size: 15px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./signup.css">
+    <title>الدخول الموحد | أكادمية طويق</title>
+</head>
+<body>
+
+    <div class="all-form">
+        <form>
+          <h2>ولي أمر</h2>
+          <br>
+          <h3>تسجيل الدخول الموحد لإنظمة اكاديمية طويق</h3>
+          <br>
+          <input type="text" id="username" placeholder=" الأسم " />
+          <br />
+          <br />
+          <input type="email" id="email" placeholder="example@outlook.sa" />
+            <br>
+            <br>
+            <input type="password" placeholder="كلمة المرور" />
+
+            <button>تسجيل الدخول</button>
+        </form>
+
+        <hr>
+
+        <form>
+            <h1>مدرب/ة </h1>
+            <br>
+            <button class="buttonQ" onclick="goToPage()">تسجيل </button>            
+        </form>
+        <script>
+            function goToPage() {
+                window.location.href = "/home-sign/home.html"; 
+            }
+        </script>
+    </div>
+</body>
+</html>

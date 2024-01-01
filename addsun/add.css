@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+
+}
+
+body{
+    background-color: whitesmoke;
+}
+.flexbox {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0  50px 0;
+}
+form{ 
+    border-radius: 30px; 
+    width:450px;
+    height: 450px;
+    margin-top: 7vh;
+    border: 1px solid #ffffff;
+    background-color: white;
+    text-align: center;
+    
+}
+h2{
+    margin: 10px;
+    text-align: right;  
+    color: black;
+    font-weight: 400;
+    font-size:40px;
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+}
+h4{
+    margin: 10px;
+    text-align: right;  
+    color: black;
+    font-weight: 100;
+    font-size:16px;
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+}
+
+input[type=text] 
+{
+    width: 400px;
+    height: 20px;
+    border: 1px solid #a6b6a9;
+    border-radius: 6px; 
+    padding: 15px;  
+     direction: rtl;
+
+}
+input[type=email] 
+{
+    width: 400px;
+    height: 20px;
+    border: 1px solid #a6b6a9;
+    border-radius: 6px; 
+    padding: 15px;  
+     direction: rtl;
+
+}
+
+input[type=password] 
+{
+    width: 400px;
+    height: 20px;
+    border: 1px solid #a6b6a9;
+    border-radius: 6px; 
+    padding: 15px;
+    direction: rtl;
+
+}
+
+button{
+    width: 200px;
+    height: 50px;
+    margin-top:5vh ;
+    background-color: #4e3797;
+    border: 1px solid #4e3797;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.4s;
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+
+} 
+button:hover{
+    background-color: white;
+    color: #4e3797;
+    transition: 0.4s;
+}
