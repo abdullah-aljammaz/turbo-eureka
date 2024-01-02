@@ -1,6 +1,6 @@
 async function displayEvents() {
   try {
-    const response = await fetch(`http://localhost:3003/getmycallouts`, {
+    const response = await fetch(`http://localhost:3003/teacher/getMyCallouts`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },

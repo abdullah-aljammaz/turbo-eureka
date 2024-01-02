@@ -1,7 +1,7 @@
 
 async function displayEvents() {
   try {
-    const response = await fetch(`http://localhost:3003/getSonsByFather`, {
+    const response = await fetch(`http://localhost:3003/father/getSonsByFather`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
@@ -51,7 +51,7 @@ todoList.addEventListener("click", async function (event) {
     if (result.isConfirmed) {
       try {
 
-        const response = await fetch(`http://localhost:3003/callMySon/${sonId}`, {
+        const response = await fetch(`http://localhost:3003/son/call/${sonId}`, {
           method: "POST",
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),

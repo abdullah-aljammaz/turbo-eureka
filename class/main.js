@@ -1,21 +1,20 @@
-document.getElementById("loginForm").addEventListener("submit", async function (event) {
+document.getElementById("createClass").addEventListener("submit", async function (event) {
   event.preventDefault(); // Prevent the default form submission
 
-  const firstname = document.getElementById("firstname").value;
-  const lastname = document.getElementById("lastname").value;
-  const year = document.getElementById("yearofbirth").value;
-  let yearofbirth = Number(year)
+  const className = document.getElementById("class_name").value;
+  const teacherId = document.getElementById("teacher_id").value;
+  console.log(className);
+  console.log(teacherId);
   try {
-    const response = await fetch("http://localhost:3003/createSon", {
+    const response = await fetch("http://localhost:3003/admin/createClass", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        firstname,
-        lastname,
-        yearofbirth,
+        className,
+        teacherId
       }),
     });
     
