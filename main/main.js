@@ -18,7 +18,7 @@ async function displayEvents() {
         ${son.class_name !== null ? `<h3>المعسكر:${son.class_name}</h3>` : ''}
         <div class="butten" ${son.class_id === null ? 'style="display: none;"' : ''}>
           <button class="tfasel">تفاصيل المعسكر</button>
-          <button class="gouot" data-son-id="${son.id}">انا جاهز لإستلام ابني</button>
+          <button class="gouot" data-son-id="${son.id}" >انا جاهز لإستلام ابني</button>
         </div>
       `;
 
