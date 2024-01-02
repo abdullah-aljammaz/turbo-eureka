@@ -74,13 +74,14 @@ section {
   margin-right: -9px;
 }
 .card {
-  width: 30%;
+  width: 27%;
   height: 250px;
   background-color: rgb(255, 255, 255);
   border-radius: 12px;
   border-width: 2px;
   border-color: black;
   transition: 0.4s ease;
+  margin-right: 4%;
 }
 .card h3 {
   margin-right: 12px;
@@ -89,7 +90,10 @@ section {
 }
 .butten {
   display: flex;
-  margin-top: 20px;
+  /* margin-top: 3%; */
+  position: absolute;
+  top: 79%;
+  width: 100%;
 }
 .tfasel {
   width: 128%;

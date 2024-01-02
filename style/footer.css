@@ -1,0 +1,105 @@
+
+footer{
+    
+  width: 100%;
+  display: flex;
+  height: 60vh;
+  background-color: #4e3797;
+  justify-content: center;
+}
+footer div{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer div:nth-child(1){
+  width: 25%;   
+}
+footer div:nth-child(1) h3{
+font-size: 1.5rem;
+color: whitesmoke;
+}
+
+footer div:nth-child(1) img{
+  width: 85%;
+}
+footer div:nth-child(2){
+  width: 50%;   
+  display: flex;
+  flex-direction: column;
+  gap:10%;
+}
+footer div:nth-child(3){
+  width: 25%;   
+}
+footer div:nth-child(3) img{
+width: 70%;
+filter: invert(0);
+}
+footer div img{
+filter: invert(0);
+} 
+footer div ul{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+footer div ul:nth-child(1){ 
+  gap: 1%;
+  flex-direction: row-reverse;
+} 
+footer div ul:nth-child(1) hr{
+  border: none;
+  width: 1px;
+  height: 5vh;
+  padding: 1px;
+  background: aliceblue;
+  transform: rotate(180deg);
+  border-radius: 100px;
+}
+footer div ul:nth-child(1) li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer div ul li{
+  list-style: none;
+} 
+footer div ul li a{
+white-space: nowrap;
+color: aliceblue;
+text-decoration: none;
+font-size: 1.2rem;
+transition: 0.3s;
+}
+footer div ul li a:hover{
+color: #B9FAF8;
+transform: translate(0,-3px);
+}
+footer div ul:nth-child(2){
+gap:5%;
+}
+footer div ul:nth-child(2) li i{
+color: #222;
+font-size: 1.6rem;
+background-color: aliceblue;
+border-radius: 25px;
+width: 45px;
+height: 45px;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: 0.3s;
+cursor: pointer;
+}
+footer div ul:nth-child(2) li i:hover{
+filter: invert(1);
+}
+
+
+footer div p{
+  color: aliceblue;
+  font-size: x-large;
+}

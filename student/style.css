@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal';
+}
+.navbar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    transition: 0.3s ease;
+    background-color: white;
+}
+
+
+nav a,
+li {
+    margin: 0 3%;
+    font-size: 130%;
+}
+.nav-link {
+    width: 135px;
+}
+.login {
+    width: 10%;
+}
+
+.login button {
+    width: 100%;
+    padding: 5% 0;
+    background: rgb(47, 171, 153);
+    transition: 0.4s ease;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.login button.scrolled {
+    color: white;
+    background: rgb(47, 171, 153);
+}
+
+
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #f2f4f7;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 30%;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: black;
+    transition: 0.4s ease;
+}
+.card h3{
+    margin-right: 12px;
+    font-size: 30px;
+    padding: 1% 0;
+}
+.butten{
+    display: flex;
+    margin-top:20px ;
+}
+.tfasel{
+    width: 128%;
+    height: 40px;
+    background: linear-gradient( #34bcff , #9c84ff);
+    border-radius: 12px;
+    margin-right: 20px;
+    color: white;
+    border: none;
+
+
+    
+}
+.gouot{
+    width: 37%;
+    height: 40px;
+    background: linear-gradient( #34bcff , #9c84ff);
+    border-radius: 12px;
+    border: none;
+    margin-right: 80px;
+    color: white;
+   
+}
+
+
+footer{
+    
+    width: 100%;
+    display: flex;
+    height: 60vh;
+    background-color: #4e3797;
+    justify-content: center;
+}
+footer div{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer div:nth-child(1){
+    width: 25%;   
+}
+footer div:nth-child(1) h3{
+font-size: 1.5rem;
+color: whitesmoke;
+}
+
+footer div:nth-child(1) img{
+    width: 85%;
+}
+footer div:nth-child(2){
+    width: 50%;   
+    display: flex;
+    flex-direction: column;
+    gap:10%;
+}
+footer div:nth-child(3){
+    width: 25%;   
+}
+footer div:nth-child(3) img{
+width: 70%;
+filter: invert(0);
+}
+ footer div img{
+filter: invert(0);
+} 
+footer div ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer div ul:nth-child(1){ 
+    gap: 1%;
+    flex-direction: row-reverse;
+} 
+footer div ul:nth-child(1) hr{
+    border: none;
+    width: 1px;
+    height: 5vh;
+    padding: 1px;
+    background: aliceblue;
+    transform: rotate(180deg);
+    border-radius: 100px;
+}
+footer div ul:nth-child(1) li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer div ul li{
+    list-style: none;
+} 
+footer div ul li a{
+white-space: nowrap;
+color: aliceblue;
+text-decoration: none;
+font-size: 1.2rem;
+transition: 0.3s;
+}
+footer div ul li a:hover{
+color: #B9FAF8;
+transform: translate(0,-3px);
+}
+footer div ul:nth-child(2){
+gap:5%;
+}
+footer div ul:nth-child(2) li i{
+color: #222;
+font-size: 1.6rem;
+background-color: aliceblue;
+border-radius: 25px;
+width: 45px;
+height: 45px;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: 0.3s;
+cursor: pointer;
+}
+footer div ul:nth-child(2) li i:hover{
+filter: invert(1);
+}
+
+
+footer div p{
+    color: aliceblue;
+    font-size: x-large;
+}
+@media screen and (max-width: 768px) {
+    nav a,
+    li {
+        margin: 0;
+        font-size: 100%;
+    }
+
+    .login {
+        width: 30%;
+    }
+
+    .card,
+    .tfasel,
+    .gouot {
+        width: 100%;
+    }
+}

@@ -10,14 +10,14 @@ async function displayEvents() {
     todoList.innerHTML = "";
     callouts.forEach(async (callout) => {
       const father = await fetch(
-        `http://localhost:3003/fahter/getById/${callout.father_id}`, {
+        `http://localhost:3003/teacher/getfatherById/${callout.father_id}`, {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
         });
       const fathers = await father.json();
       const student = await fetch(
-        `http://localhost:3003/son/getById/${callout.son_id}`, {
+        `http://localhost:3003/teacher/getSonById/${callout.son_id}`, {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
@@ -61,7 +61,7 @@ todoList.addEventListener("click", async function (event) {
     if (result.isConfirmed) {
       try {
 
-        const response = await fetch(`http://localhost:3003/sendout/${callId}`, {
+        const response = await fetch(`http://localhost:3003/teacher/sendOut/${callId}`, {
           method: "PUT",
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -70,6 +70,7 @@ todoList.addEventListener("click", async function (event) {
 
 
         if (response.ok) {
+          
           Swal.fire({
             title: "تم ارسال الطالب!",
             // text: "سيتم ارسال ابنك اليك في اسرع وقت",

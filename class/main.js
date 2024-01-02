@@ -20,11 +20,12 @@ document.getElementById("createClass").addEventListener("submit", async function
     
     const responseData = await response.json();
     if (response.ok) {
-      alert(responseData.message);
+      alert("تم انشاء المعسكر");
+      window.location.href = "../allclasses";
       
       // Optionally, you can handle success, e.g., redirect to another page
     } else {
-      alert(responseData.message);
+      alert("تم انشاء المعسكر");
     }
   } catch (error) {
     console.error("Adding son failed:", error);
