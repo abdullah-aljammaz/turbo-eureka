@@ -32,13 +32,15 @@ h2 {
   font-size: 40px;
   font-family: "Baloo Bhaijaan 2", sans-serif;
 }
-h4 {
+label {
   margin: 10px;
   text-align: right;
   color: black;
   font-weight: 100;
   font-size: 16px;
   font-family: "Baloo Bhaijaan 2", sans-serif;
+  float: right;
+  margin-right: 2rem;
 }
 
 input[type="text"] {
@@ -401,4 +403,8 @@ footer div p{
     .gouot {
         width: 100%;
     }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

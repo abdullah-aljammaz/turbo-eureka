@@ -4,31 +4,45 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/addsun/add.css" />
-    <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest"></script>
 
     <title>الدخول الموحد | أكادمية طويق</title>
   </head>
   <body>
-    
     <section class="flexbox">
-
-      <form id="SetStudentInClass">
+      <form>
         <h2>اضافة طالب</h2>
 
-        <h4>اسم المعسكر</h4>
-        <input type="text" placeholder="Class Name" id="class_name" />
+        <label for="class_name">اسم المعسكر</label>
+        <input type="text" placeholder="Class Name" id="class_name" style="font-family: Arial, Helvetica, sans-serif;"/>
         <br />
         <br />
-        <h4>هوية الطالب</h4>
-        <input type="text" placeholder="Student ID" id="student_id" />
+        <label for="student_id">هوية الطالب</label>
+        <input type="text" placeholder="Student ID" id="student_id" style="font-family: Arial, Helvetica, sans-serif;"/>
         <button type="submit">اضافة الطالب</button>
+        <button id="extractDataButton" type="button" ><i class="bi bi-file-earmark-spreadsheet"></i> &nbsp; Google Sheet</button>
+        <script src="gsheet.js"></script>
         <br />
       </form>
     </section>
   </body>
 </html>
-<script src="main.js"></script>
+<!-- <script src="main.js"></script> -->

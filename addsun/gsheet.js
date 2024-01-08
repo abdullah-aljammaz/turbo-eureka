@@ -1,51 +1,4 @@
-document
-  .getElementById("SetStudentInClass")
-  .addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const class_name = document.getElementById("class_name").value;
-    const student_id = document.getElementById("student_id").value;
-
-    try {
-      const response = await fetch(
-        "http://localhost:3003/admin/setStudentClass",
-        {
-          method: "PUT",
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            class_name,
-            student_id,
-          }),
-        }
-      );
-      const responseData = await response.json();
-      if (response.ok) {
-        if (responseData && responseData.message) {
-          alert("تم اضافة الطالب");
-          // Optionally, you can handle success, e.g., redirect to another page
-          window.location.href = "../allclasses";
-        } else {
-          alert("تم اضافة الطالب");
-          window.location.href = "../allclasses";
-        }
-      } else {
-        alert(
-          responseData && responseData.message
-            ? responseData.message
-            : "Failed to add student"
-        );
-      }
-      window.location.href = "../allclasses";
-
-    } catch (error) {
-      console.error("Adding student failed:", error);
-    }
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("extractDataButton").addEventListener("click", function () {
     extractData();
   });
@@ -63,12 +16,12 @@ async function extractData() {
     title: "Enter Google Sheet URL",
     input: "text",
     icon: "question",
-
     inputAttributes: {
       autocapitalize: "off",
     },
     showCancelButton: true,
-    confirmButtonText: "Start",
+    confirmButtonText: "send",
+    confirmButtonColor: "#3085d6",
     preConfirm: (url) => {
       const spreadsheetId = extractSpreadsheetId(url);
       if (!spreadsheetId) {
@@ -81,20 +34,31 @@ async function extractData() {
       }
       return spreadsheetId;
     },
-    allowOutsideClick: () => !Swal.isLoading(),
+    allowOutsideClick: false,
   });
 
   if (!url.isConfirmed) {
     return;
   }
 
+  const customOverlay = createCustomOverlay(); // Create a custom overlay with a spinner
+  document.body.appendChild(customOverlay);
+
   const spreadsheetId = url.value;
   const exportURL = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=xlsx`;
 
   try {
-    Swal.showLoading();
-
     const response = await fetch(exportURL);
+
+    if (response.status === 400 || response.status === 401 || response.status === 402 || response.status === 403) {
+      Swal.fire({
+        title: "Invalid URL",
+        text: "The provided Google Sheet URL is not in the correct format. Please enter a valid URL.",
+        icon: "error",
+      });
+      return false;
+    }
+
     const data = await response.blob();
     const buf = new Uint8Array(await new Response(data).arrayBuffer());
 
@@ -104,8 +68,8 @@ async function extractData() {
     const jsonData = XLSX.utils.sheet_to_json(sheet);
 
     const studentsData = jsonData.map((rows) => ({
-      student_id: rows.student_id,
-      class_name: rows.class_name,
+        student_id: rows.student_id,
+        class_name: rows.class_name,
     }));
 
     try {
@@ -119,31 +83,61 @@ async function extractData() {
             },
             body: JSON.stringify(student),
           })
-        )
+        
+          )
       );
 
       const allStudentsSuccess = responses.every((response) => response.ok);
 
       if (allStudentsSuccess) {
         Swal.fire({
-          title: "Good job!",
-          text: "You clicked the button!",
+          title: "Success!",
+          text: "All students have been successfully added.",
           icon: "success",
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
         });
       } else {
         Swal.fire({
           title: "Error",
-          text: "Failed to add one or more students.",
+          text: "Failed to add one or more students. Please check the data and try again.",
           icon: "error",
         });
       }
     } catch (error) {
       console.error("Adding students failed:", error);
     } finally {
-      Swal.hideLoading();
+      customOverlay.remove();
     }
   } catch (error) {
     console.error("Error fetching data:", error);
+    customOverlay.remove();
   }
 }
 
+function createCustomOverlay() {
+  const overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  overlay.style.zIndex = "9999";
+
+  const spinner = document.createElement("div");
+  spinner.style.border = "16px solid #f3f3f3";
+  spinner.style.borderRadius = "50%";
+  spinner.style.borderTop = "16px solid #3498db";
+  spinner.style.width = "120px";
+  spinner.style.height = "120px";
+  spinner.style.position = "absolute";
+  spinner.style.top = "50%";
+  spinner.style.left = "50%";
+  spinner.style.transform = "translate(-50%, -50%)";
+  spinner.style.animation = "spin 2s linear infinite"; // Apply spinning animation
+
+  overlay.appendChild(spinner);
+  return overlay;
+}
